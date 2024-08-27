@@ -3,7 +3,7 @@ type Props = {
     name: string;
     description ?: string;
     image: string;
-}
+};
 
 const Class = ({ name, description, image }: Props) => {
   const overlayStyles = `p-5 absolute z-30 flex h-[380px]
@@ -20,6 +20,6 @@ const Class = ({ name, description, image }: Props) => {
    <img alt={`${image}`} src = {image} />
   </li>
   );
-};
+}
 
 export default Class;
