@@ -1,13 +1,13 @@
-import useMediaQuery from "@/hooks/useMediaQuery";
-import { SelectedPage } from "@/shared/types";
-import ActionButton from "@/shared/ActionButton";
-import HomePageText from "@/assets/HomePageText.png";
 import HomePageGraphic from "@/assets/HomePageGraphic.png";
+import HomePageText from "@/assets/HomePageText.png";
 import Sponsor1 from "@/assets/Sponsor1.png";
 import Sponsor2 from "@/assets/Sponsor2.png";
 import Sponsor3 from "@/assets/Sponsor3.png";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import useMediaQuery from "@/hooks/useMediaQuery";
+import ActionButton from "@/shared/ActionButton";
+import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 
 type Props = {
@@ -47,7 +47,7 @@ const Home = ({ setSelectedPage }: Props) => {
           </div>
 
           <p className="mt-8 text-sm">
-            Home Page Text
+          Welcome to Nectar Haven, your ultimate destination for high-quality hummingbird feeders! Our carefully crafted feeders are designed to attract and nourish these mesmerizing birds, turning your garden into a vibrant oasis of natural beauty. Made from durable, eco-friendly materials, our feeders are easy to clean and refill, ensuring a hassle-free experience for you and a safe, delightful feeding environment for the hummingbirds. Whether you're a seasoned bird watcher or just starting your journey, Nectar Haven offers a variety of designs to suit your taste and meet the unique needs of these incredible creatures. Brighten your outdoor space and enjoy the enchanting dance of hummingbirds with our premium feeders!
           </p>
         </motion.div>
 
