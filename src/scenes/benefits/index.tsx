@@ -1,33 +1,37 @@
+import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png";
+import Strings from "@/assets/strings.json";
+import ActionButton from "@/shared/ActionButton";
+import HText from "@/shared/HText";
 import { BenefitType, SelectedPage } from "@/shared/types";
-import { 
-    HomeModernIcon, 
-    UserGroupIcon, 
-    AcademicCapIcon 
+import {
+  AcademicCapIcon,
+  HomeModernIcon,
+  UserGroupIcon
 } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
-import HText from "@/shared/HText";
 import Benefit from "./Benefit";
-import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png"
-import ActionButton from "@/shared/ActionButton";
+const benefit1 = Strings.benefitsPage.Benefit1;
+const desp1 = Strings.benefitsPage.BenefitDecription1;
+const benefit2 = Strings.benefitsPage.Benefit2;
+const desp2 = Strings.benefitsPage.BenefitDecription2;
+const benefit3 = Strings.benefitsPage.Benefit3;
+const desp3 = Strings.benefitsPage.BenefitDecription3;
 
 const benefits: Array<BenefitType> = [
     {
         icon: <HomeModernIcon className="h-6 w-6" />,
-        title: "Benefit One",
-        description:
-            "Benefit Description 1",
+        title: benefit1,
+        description: desp1,
     },
     {
         icon: <UserGroupIcon className="h-6 w-6" />,
-        title: "Benefit Two",
-        description:
-            "Benefit Description 2",
+        title: benefit2,
+        description: desp2,
     },
     {
         icon: <AcademicCapIcon className="h-6 w-6" />,
-        title: "Benefit Three",
-        description:
-            "Benefit Description 3",
+        title: benefit3,
+        description: desp3,
     },
 ]
 
@@ -47,24 +51,17 @@ const Benefits = ({setSelectedPage}: Props) => {
     <section
     id="benefits"
     className="mx-auto min-h-full w-5/6 py-20">
-      <motion.div
-        onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
-      >
+      <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}>
         {/* HEADER */}
         <motion.div 
-        className="md:my-5 md:w-3/5"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5}}
-        transition={{ duration: 0.5}}
-        variants={{ 
-            hidden: { opacity: 0, x:-50} , 
-            visible: { opacity: 1, x: 0},
-        }}>
-            <HText>BIRD FEEDER TEXT.</HText>
-            <p className = "my-5 text-sm">
-              BENEFITS TEXT HEADER
-            </p>
+          className="md:my-5 md:w-3/5"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5}}
+          transition={{ duration: 0.5}}
+          variants={{ hidden: { opacity: 0, x:-50} , visible: { opacity: 1, x: 0},}}>
+              <HText>{Strings.benefitsPage.Header}</HText>
+              <p className = "my-5 text-sm">{Strings.benefitsPage.BenefitsDescription}</p>
         </motion.div>
 
         {/* BENEFITS */}
@@ -76,24 +73,20 @@ const Benefits = ({setSelectedPage}: Props) => {
           variants={container}
           >
             {benefits.map((benefit: BenefitType) => (
-                <Benefit
-                    key={benefit.title}
-                    icon={benefit.icon}
-                    title={benefit.title}
-                    description={benefit.description}
-                    setSelectedPage={setSelectedPage}
-                />
+              <Benefit
+                key={benefit.title}
+                icon={benefit.icon}
+                title={benefit.title}
+                description={benefit.description}
+                setSelectedPage={setSelectedPage}
+              />
             ))}
         </motion.div>
 
         {/* GRAPHICS AND DSECRIPTION */}
         <div className="mt-16 items-center justify-between gap-20 md:mt-28 md:flex">
           {/* GRAPHIC */}
-          <img 
-            className="mx-auto"
-            alt="benefits-page-graphic"
-            src={BenefitsPageGraphic}
-          />
+          <img className="mx-auto" alt="benefits-page-graphic" src={BenefitsPageGraphic} />
 
           {/* DESCRIPTION */}
             <div>
