@@ -46,7 +46,7 @@ const Home = ({ setSelectedPage }: Props) => {
             </div>
           </div>
 
-          <p className="mt-8 text-sm">{Strings.homePageGeneralDescription}</p>
+          <p className="mt-8 text-sm">{Strings.homePage.GeneralDescription}</p>
         </motion.div>
 
         {/* ACTIONS */}
