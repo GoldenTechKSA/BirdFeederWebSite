@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Logo from "@/assets/Logo.png";
-import { SelectedPage } from "@/shared/types";
+import Strings from "@/assets/strings.json";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import ActionButton from "@/shared/ActionButton";
+import { SelectedPage } from "@/shared/types";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
 import Link from "./Link";
 
 type Props = {
@@ -30,29 +31,29 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                 <div className={`${flexBetween} w-full`}>
                    <div className = {`${flexBetween} gap-8 text-sm`}>
                     <Link 
-                    page="Home"
+                    page={Strings.navBarSection.Home}
                     selectedPage ={selectedPage}
                     setSelectedPage={setSelectedPage}
                     />
                     <Link 
-                    page="Benefits"
+                    page={Strings.navBarSection.Benefits}
                     selectedPage ={selectedPage}
                     setSelectedPage={setSelectedPage}
                     />
                     <Link 
-                    page="Our Classes"
+                    page={Strings.navBarSection.OurProducts}
                     selectedPage ={selectedPage}
                     setSelectedPage={setSelectedPage}
                     />
                     <Link 
-                    page ="Contact Us"
+                    page ={Strings.navBarSection.ContactUs}
                     selectedPage ={selectedPage}
                     setSelectedPage={setSelectedPage}
                     />
                    </div>
                    <div className = {`${flexBetween} gap-8`}>
                     <p>Sign In</p>
-                    <ActionButton setSelectedPage={setSelectedPage}>Become a Member</ActionButton>
+                    <ActionButton setSelectedPage={setSelectedPage}>{Strings.navBarSection.BecomeMember}</ActionButton>
                    </div>
                 </div> 
                 ) : ( 
@@ -80,22 +81,22 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
         {/*MENU ITEMS */}
         <div className = "ml-[33%] flex flex-col gap-10 text-2xl">
             <Link 
-            page="Home"
+            page={Strings.navBarSection.Home}
             selectedPage ={selectedPage}
             setSelectedPage={setSelectedPage}
             />
             <Link 
-            page="Benefits"
+            page={Strings.navBarSection.Benefits}
             selectedPage ={selectedPage}
             setSelectedPage={setSelectedPage}
             />
             <Link 
-            page="Our Classes"
+            page={Strings.navBarSection.OurProducts}
             selectedPage ={selectedPage}
             setSelectedPage={setSelectedPage}
             />
             <Link 
-            page ="Contact Us"
+            page ={Strings.navBarSection.ContactUs}
             selectedPage ={selectedPage}
             setSelectedPage={setSelectedPage}
             />
