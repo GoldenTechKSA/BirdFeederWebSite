@@ -1,6 +1,6 @@
 {
     "homePage": {
-    "GeneralDescription":"Welcome to Nectar Haven, your ultimate destination for high-quality hummingbird feeders! Our carefully crafted feeders are designed to attract and nourish these mesmerizing birds, turning your garden into a vibrant oasis of natural beauty. Made from durable, eco-friendly materials, our feeders are easy to clean and refill, ensuring a hassle-free experience for you and a safe, delightful feeding environment for the hummingbirds. Whether you're a seasoned bird watcher or just starting your journey, Nectar Haven offers a variety of designs to suit your taste and meet the unique needs of these incredible creatures. Brighten your outdoor space and enjoy the enchanting dance of hummingbirds with our premium feeders!"
+    "GeneralDescription":"Welcome to Nectar Haven©, your ultimate destination for high-quality hummingbird feeders! Our carefully crafted feeders are designed to attract and nourish these mesmerizing birds, turning your garden into a vibrant oasis of natural beauty. Made from durable, eco-friendly materials, our feeders are easy to clean and refill, ensuring a hassle-free experience for you and a safe, delightful feeding environment for the hummingbirds. Whether you're a seasoned bird watcher or just starting your journey, Nectar Haven offers a variety of designs to suit your taste and meet the unique needs of these incredible creatures. Brighten your outdoor space and enjoy the enchanting dance of hummingbirds with our premium feeders!"
     },
     "productsPage": {
         "Header": "Our Products",
@@ -36,7 +36,7 @@
     },
     "footerSection":{
         "ContactUs": "Contact Us",
-        "copyRight" : "© Bird feeder Inc. All Rights Reserved.",
+        "copyRight" : "© Nectar Haven Feeder Inc. All Rights Reserved.",
         "WedLoveToHearFromYouWhetherYouHaveQuestions": "We'd love to hear from you! Whether you have questions, feedback, or need assistance, feel free to reach out to us using the contact information below.",
         "Links": "Helpful Links",
         "Email": "support@example.com",
@@ -46,5 +46,13 @@
         "HoursOfOperation":"Monday - Friday: 9:00 AM - 5:00 PM",
         "PrivacyStatement": "We value your privacy. The information you provide will only be used to respond to your inquiry.",
         "ContactForm":"[Contact Form]"
+    },
+    "navBarSection": {
+        "Home": "Home",
+        "Benefits": "Benefits",
+        "OurProducts": "Our Products",
+        "ContactUs": "Contact Us",
+        "BecomeMember": "Become a Memeber"
     }
+
 }
