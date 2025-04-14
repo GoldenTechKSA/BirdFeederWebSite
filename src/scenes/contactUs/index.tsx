@@ -1,8 +1,12 @@
-import { useForm } from "react-hook-form";
+import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
+import Strings from "@/assets/strings.json";
+import HText from "@/shared/HText";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
-import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
-import HText from "@/shared/HText";
+import { useForm } from "react-hook-form";
+
+const buyNow = Strings.buyNowPage.buyNow;
+const description = Strings.buyNowPage.description;
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -37,13 +41,9 @@ const ContactUs = ({ setSelectedPage }: Props) => {
           }}
           >
             <HText>
-                <span className="text-primary-500">BUY NOW</span>
+                <span className="text-primary-500">{buyNow}</span>
             </HText>
-            <p className="my-5">
-                CONTACT US TEXT CONTACT US TEXT CONTACT US TEXT 
-                CONTACT US TEXT CONTACT US TEXT CONTACT US TEXT 
-                CONTACT US TEXT CONTACT US TEXT CONTACT US TEXT 
-            </p>
+            <p className="my-5">{description}</p>
           </motion.div>
 
           {/* FORM AND IMAGE */}
