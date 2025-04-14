@@ -10,12 +10,22 @@ import {
 } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Benefit from "./Benefit";
+
 const benefit1 = Strings.benefitsPage.Benefit1;
 const desp1 = Strings.benefitsPage.BenefitDecription1;
 const benefit2 = Strings.benefitsPage.Benefit2;
 const desp2 = Strings.benefitsPage.BenefitDecription2;
 const benefit3 = Strings.benefitsPage.Benefit3;
 const desp3 = Strings.benefitsPage.BenefitDecription3;
+const HappyMembers1 = Strings.benefitsPage.HappyMembers1;
+const HappyMembers2 = Strings.benefitsPage.HappyMembers2;
+const HappyMembersQuote1 = Strings.benefitsPage.HappyMembersQuote1;
+const HappyMembersQuote2 = Strings.benefitsPage.HappyMembersQuote2;
+const HappyMembersQuote3 = Strings.benefitsPage.HappyMembersQuote3; 
+const HappyMembersQuote4 = Strings.benefitsPage.HappyMembersQuote4; 
+const HappyMembersQuote5 = Strings.benefitsPage.HappyMembersQuote5; 
+const HappyMembersQuote6 = Strings.benefitsPage.HappyMembersQuote6; 
+const HappyMembersQuote7 = Strings.benefitsPage.HappyMembersQuote7; 
 
 const benefits: Array<BenefitType> = [
     {
@@ -103,8 +113,9 @@ const Benefits = ({setSelectedPage}: Props) => {
                         visible: { opacity: 1, x: 0},
                     }}>
                         <HText>
-                          MILLIONS OF HAPPY MEMBERS GETTING {" "}
-                          <span className="text-primary-500">FIT</span>
+                          {HappyMembers1} {" "}
+                          <span className="text-primary-500">Love</span>
+                          {" "} {HappyMembers2}
                         </HText>
                     </motion.div>
                   </div>
@@ -120,16 +131,13 @@ const Benefits = ({setSelectedPage}: Props) => {
                     hidden: { opacity: 0, x: 50} , 
                     visible: { opacity: 1, x: 0},
                 }}>
-                  <p className="my-5">
-                    DESCRIPT DESCRIPT DESCRIPT DESCRIPT DESCRIPT DESCRIPT
-                    DESCRIPT DESCRIPT DESCRIPT DESCRIPT DESCRIPT DESCRIPT
-                    DESCRIPT DESCRIPT DESCRIPT DESCRIPT DESCRIPT DESCRIPT
-                  </p>
-                  <p className="mb-5">
-                    MORE DESCRIPT MORE DESCRIPT MORE DESCRIPT MORE DESCRIPT 
-                    MORE DESCRIPT MORE DESCRIPT MORE DESCRIPT MORE DESCRIPT 
-                    MORE DESCRIPT MORE DESCRIPT MORE DESCRIPT MORE DESCRIPT 
-                  </p>
+                  <p className="my-5">{HappyMembersQuote1}</p>
+                  <p className="mb-5">{HappyMembersQuote2}</p>
+                  <p className="mb-5">{HappyMembersQuote3}</p>
+                  <p className="mb-5">{HappyMembersQuote4}</p>
+                  <p className="mb-5">{HappyMembersQuote5}</p>
+                  <p className="mb-5">{HappyMembersQuote6}</p>
+                  <p className="mb-5">{HappyMembersQuote7}</p>
                 </motion.div>
 
                 {/* BUTTON */}
