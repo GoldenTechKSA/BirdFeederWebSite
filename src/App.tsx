@@ -3,7 +3,7 @@ import Home from "@/scenes/home";
 import Benefits from "@/scenes/benefits";
 import { useEffect, useState } from "react";
 import { SelectedPage } from "@/shared/types";
-import OurClasses from "@/scenes/ourClasses";
+import Products from "@/scenes/products";
 import ContactUs from "@/scenes/contactUs";
 import Footer from "@/scenes/footer";
 
@@ -21,7 +21,7 @@ function App() {
       if (window.scrollY !== 0) setIsTopofPage(false);
     }
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("Scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [])
   return ( <div className="app bg-gray-20">
       <Navbar 
@@ -31,7 +31,7 @@ function App() {
       />
       <Home setSelectedPage={setSelectedPage} />
       <Benefits setSelectedPage={setSelectedPage} />
-      <OurClasses setSelectedPage={setSelectedPage} />
+      <Products setSelectedPage={setSelectedPage} />
       <ContactUs setSelectedPage={setSelectedPage}/>
       <Footer />
     </div>

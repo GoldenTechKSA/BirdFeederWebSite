@@ -3,6 +3,7 @@ import Strings from "@/assets/strings.json";
 import HText from "@/shared/HText";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
+import { FormEvent } from "react";
 import { useForm } from "react-hook-form";
 
 const buyNow = Strings.buyNowPage.buyNow;
@@ -20,7 +21,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
         formState: { errors }
     } = useForm();
 
-    const onSubmit = async (e: any) => {
+    const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
         const isValid= await trigger();
         if (!isValid) {
             e.preventDefault();
@@ -47,7 +48,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
           </motion.div>
 
           {/* FORM AND IMAGE */}
-          <div className="mt-10 jusify-between gap-8 md:flex">
+          <div className="mt-10 justify-between gap-8 md:flex">
             <motion.div
             className="mt-10 basis-3/5 md:mt-0"
             initial="hidden"
@@ -62,7 +63,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                 <form
                 target="_blank"
                 onSubmit={onSubmit}
-                action="https://formsubmit.co/your@email.com"
+                action={`https://formsubmit.co/${Strings.footerSection.Email}`}
                 method="POST"
                 >
                     <input
@@ -116,7 +117,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 
                     <button
                       type="submit"
-                      className="mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duraction-500 hover:text-white"
+                      className="mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white"
                     >
                       SUBMIT
                     </button>
@@ -134,7 +135,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                 visible: { opacity: 1, y: 0},
               }}
             >
-                <div className="md:before:content-evolvetext w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1]">
+                <div className="w-full">
                   <img 
                     className="w-full"
                     alt="contact-us-page-graphic"

@@ -6,11 +6,11 @@ import image5 from "@/assets/image5.png"
 import image6 from "@/assets/image6.png"
 import Strings from "@/assets/strings.json"
 import HText from '@/shared/HText'
-import { ClassType, SelectedPage } from '@/shared/types'
+import { ProductType, SelectedPage } from '@/shared/types'
 import { motion } from 'framer-motion'
-import Class from "./Class"
+import Product from "./Product"
 
-const classes: Array<ClassType> = [
+const products: Array<ProductType> = [
     {
         name: "BIRD FEEDER 1",
         description: "BIRD FEEDER 1 DESCRIPTION",
@@ -45,10 +45,10 @@ type Props = {
     setSelectedPage: (value: SelectedPage) => void;
 };
 
-const OurClasses = ({ setSelectedPage }: Props) => {
+const Products = ({ setSelectedPage }: Props) => {
   return (
-    <section id="ourclasses" className="w-full bg-primary-100 py-40">
-      <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}
+    <section id="ourproducts" className="w-full bg-primary-100 py-40">
+      <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Products)}
         >
           <motion.div
             className="mx-auto w-5/6"
@@ -68,8 +68,8 @@ const OurClasses = ({ setSelectedPage }: Props) => {
           </motion.div>
           <div className="mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden">
             <ul className="w-[2800px] whitespace-nowrap">
-              {classes.map((item, index) => (
-                <Class 
+              {products.map((item, index) => (
+                <Product
                   key={`${item.name}-${index}`}
                   name={item.name}
                   description={item.description}
@@ -83,4 +83,4 @@ const OurClasses = ({ setSelectedPage }: Props) => {
   )
 };
 
-export default OurClasses;
+export default Products;

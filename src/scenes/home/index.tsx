@@ -41,9 +41,7 @@ const Home = ({ setSelectedPage }: Props) => {
         }}
        >
           <div className="relative">
-            <div className="before:absolute before:-top-20 before:-left-20 before:z-[-1] md:before:content-evolvetext">
-                <img alt = "home-page-text" src={HomePageText} />
-            </div>
+            <img alt="home-page-text" src={HomePageText} />
           </div>
 
           <p className="mt-8 text-sm">{Strings.homePage.GeneralDescription}</p>
