@@ -1,5 +1,5 @@
 # BirdFeederWebSite
-codebase for BirdFeeder WebSite. This website is hosted at Hostway hoster.
+codebase for BirdFeeder WebSite. This website is hosted on Hostinger at https://nectarhavenfeeders.com.
 
 to run the app locally follow these steps:
 1. upm install  ---> to refresh the local websites

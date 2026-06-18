@@ -16,14 +16,14 @@
         "Header":"Benefits",
         "BenefitsDescription":"Owning a hummingbird feeder can be a delightful and enriching experience for both you and the hummingbirds. Here are some benefits of having a hummingbird feeder:",
         "HappyMembers1":"Our Customers",
-        "HappyMembers2":"Feathered Café Feeders",
+        "HappyMembers2":"Nectar Haven Feeders",
         "HappyMembersQuote1":"Join our community of satisfied customers who have transformed their gardens into hummingbird havens. Our feeders are designed to attract and nourish these beautiful birds, providing you with endless joy and wonder. Our hummingbird feeders are not just functional; they are also a beautiful addition to your garden. With various designs and colors, they can complement your outdoor decor while serving as a vital resource for these amazing birds.",
-        "HappyMembersQuote2":"“As a bird enthusiast and nature lover, I’m thrilled that my Feathered Café feeder has attracted so many vibrant hummingbirds to my gardens.” – S.W. (Seattle, WA)",
-        "HappyMembersQuote3":"“Feathered Café feeders have a good aesthetic design that not only attract hummingbirds but also complement our garden decor.” – I.R. (Sammamish, WA)",
-        "HappyMembersQuote4":"“Feathered Café feeders are easy to fill and clean so I can get back to watching my hummingbirds quickly while making sure they don’t become ill.” A.G. (Tucson, AZ)",
-        "HappyMembersQuote5":"“Great craftsmanship … I’ve dropped my Feathered Café feeder a couple of times and it still works!” J.B. (Bellevue, WA)",
-        "HappyMembersQuote6":"“Because of the thicker glass construction of the Feathered Café feeder, the nectar resists freezing in colder temps so I my hummingbirds are fed year-round.” J.A. (Sammamish, WA)",
-        "HappyMembersQuote7":"“Hummingbirds came to our new Feathered Café just one day after hanging it on our tree!” M.N. (Yakima, WA)",
+        "HappyMembersQuote2":"“As a bird enthusiast and nature lover, I’m thrilled that my Nectar Haven feeder has attracted so many vibrant hummingbirds to my gardens.” – S.W. (Seattle, WA)",
+        "HappyMembersQuote3":"“Nectar Haven feeders have a good aesthetic design that not only attract hummingbirds but also complement our garden decor.” – I.R. (Sammamish, WA)",
+        "HappyMembersQuote4":"“Nectar Haven feeders are easy to fill and clean so I can get back to watching my hummingbirds quickly while making sure they don’t become ill.” A.G. (Tucson, AZ)",
+        "HappyMembersQuote5":"“Great craftsmanship … I’ve dropped my Nectar Haven feeder a couple of times and it still works!” J.B. (Bellevue, WA)",
+        "HappyMembersQuote6":"“Because of the thicker glass construction of the Nectar Haven feeder, the nectar resists freezing in colder temps so I my hummingbirds are fed year-round.” J.A. (Sammamish, WA)",
+        "HappyMembersQuote7":"“Hummingbirds came to our new Nectar Haven feeder just one day after hanging it on our tree!” M.N. (Yakima, WA)",
         "Benefit1": "Attracts Hummingbirds to Your Yard",
         "BenefitDecription1":"Placing a hummingbird feeder in your yard can attract these beautiful and fascinating birds, providing you with the opportunity to observe their behavior, colors, and acrobatics up close. Hummingbirds can become regular visitors, offering daily enjoyment and entertainment.",
         "Benefit2": "Supports Hummingbird Health",
@@ -51,13 +51,18 @@
         "copyRight" : "© Nectar Haven Feeder Inc. All Rights Reserved.",
         "WedLoveToHearFromYouWhetherYouHaveQuestions": "We'd love to hear from you! Whether you have questions, feedback, or need assistance, feel free to reach out to us using the contact information below.",
         "Links": "Helpful Links",
-        "Email": "Support@FeatheredCafe.com",
+        "helpfulLinks": [
+            { "label": "Cornell Lab: All About Birds", "url": "https://www.allaboutbirds.org" },
+            { "label": "National Audubon Society", "url": "https://www.audubon.org" },
+            { "label": "The Hummingbird Society", "url": "https://www.hummingbirdsociety.org" },
+            { "label": "Journey North: Hummingbird Migration", "url": "https://journeynorth.org/hummingbirds" }
+        ],
+        "Email": "support@nectarhavenfeeders.com",
         "Phone": "(425) 428-8478",
         "Address":"458 SW Mount Si Blvd, NorthBend, 98045",
         "FollowUs":"Follow Us on [Facebook] [Twitter] [LinkedIn]",
         "HoursOfOperation":"Monday - Friday: 9:00 AM - 5:00 PM",
-        "PrivacyStatement": "We value your privacy. The information you provide will only be used to respond to your inquiry.",
-        "ContactForm":"[Contact Form]"
+        "PrivacyStatement": "We value your privacy. The information you provide will only be used to respond to your inquiry."
     },
     "navBarSection": {
         "Home": "Home",
@@ -65,7 +70,17 @@
         "OurProducts": "Our Products",
         "ContactUs": "Contact Us",
         "SignIn": "Sign In",
+        "SignOut": "Sign Out",
         "BecomeMember": "Become a Member"
+    },
+    "signInPage": {
+        "Title": "Sign In",
+        "Subtitle": "Welcome back! Sign in to manage your Nectar Haven account.",
+        "EmailPlaceholder": "EMAIL",
+        "PasswordPlaceholder": "PASSWORD",
+        "SignIn": "SIGN IN",
+        "SigningIn": "SIGNING IN…",
+        "Greeting": "Hi"
     }
 
 }

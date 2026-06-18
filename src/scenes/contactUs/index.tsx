@@ -3,6 +3,7 @@ import Strings from "@/assets/strings.json";
 import HText from "@/shared/HText";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
+import { FormEvent } from "react";
 import { useForm } from "react-hook-form";
 
 const buyNow = Strings.buyNowPage.buyNow;
@@ -20,11 +21,14 @@ const ContactUs = ({ setSelectedPage }: Props) => {
         formState: { errors }
     } = useForm();
 
-    const onSubmit = async (e: any) => {
-        const isValid= await trigger();
-        if (!isValid) {
-            e.preventDefault();
-        }
+    const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        // Always stop the native submit first: an async handler can't call
+        // preventDefault() after an await (the browser has already navigated),
+        // so we validate, then submit the form manually only if it's valid.
+        e.preventDefault();
+        const form = e.currentTarget;
+        const isValid = await trigger();
+        if (isValid) form.submit();
     }
   return <section id="contactus" className="mx-auto w-5/6 pt-24 pb-32">
         <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}>
@@ -60,11 +64,15 @@ const ContactUs = ({ setSelectedPage }: Props) => {
             }}
             >
                 <form
-                target="_blank"
                 onSubmit={onSubmit}
-                action="https://formsubmit.co/your@email.com"
+                action="https://formsubmit.co/GOLDENTECHKSA@hotmail.com"
                 method="POST"
                 >
+                    {/* FormSubmit config (hidden fields) */}
+                    <input type="hidden" name="_subject" value="New Contact Us message — Nectar Haven" />
+                    <input type="hidden" name="_template" value="table" />
+                    <input type="hidden" name="_next" value="https://nectarhavenfeeders.com" />
+
                     <input
                      className={inputStyles}
                      type="text"
