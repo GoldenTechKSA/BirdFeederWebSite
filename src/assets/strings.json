@@ -113,6 +113,12 @@
         "SignIn": "SIGN IN",
         "SigningIn": "SIGNING IN…",
         "Greeting": "Hi"
+    },
+    "checkout": {
+        "buyNow": "Buy Now",
+        "paymentLink": "https://buy.stripe.com/eVqdR9dh5ajP6h49cV63K00",
+        "successTitle": "Thank you for your purchase!",
+        "successMessage": "Your order is confirmed and a receipt is on its way to your email. Your hummingbirds thank you too!"
     }
 
 }

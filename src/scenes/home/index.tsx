@@ -158,7 +158,9 @@ const ActionButtonRow = ({
   setSelectedPage: (value: SelectedPage) => void;
 }) => (
   <>
-    <ActionButton setSelectedPage={setSelectedPage}>Buy Now</ActionButton>
+    <ActionButton setSelectedPage={setSelectedPage} href={Strings.checkout.paymentLink}>
+      {Strings.checkout.buyNow}
+    </ActionButton>
     <AnchorLink
       className="group inline-flex items-center gap-2 text-sm font-semibold text-botanical-700"
       onClick={() => setSelectedPage(SelectedPage.Benefits)}

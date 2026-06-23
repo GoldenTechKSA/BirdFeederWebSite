@@ -5,6 +5,7 @@ import Home from "@/scenes/home";
 import Navbar from "@/scenes/navbar";
 import OurProducts from "@/scenes/ourProducts";
 import Hummingbird from "@/shared/Hummingbird";
+import PurchaseBanner from "@/shared/PurchaseBanner";
 import ScrollProgressBar from "@/shared/ScrollProgressBar";
 import { SelectedPage } from "@/shared/types";
 import { useEffect, useState } from "react";
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <div className="app relative overflow-x-clip bg-cream">
+      <PurchaseBanner />
       <ScrollProgressBar />
       <Hummingbird />
       <Navbar
