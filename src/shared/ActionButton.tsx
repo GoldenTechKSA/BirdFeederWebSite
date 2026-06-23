@@ -1,22 +1,40 @@
-import React from "react"
-import AnchorLink from "react-anchor-link-smooth-scroll"
-import { SelectedPage } from "./types";
+import { SelectedPage } from "@/shared/types";
+import type { ReactNode } from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 type Props = {
-    children: React.ReactNode;
-    setSelectedPage: (value: SelectedPage) => void;
-}
+  children: ReactNode;
+  setSelectedPage: (value: SelectedPage) => void;
+  variant?: "solid" | "ghost";
+};
 
-const ActionButton = ({children, setSelectedPage}: Props) => {
+/**
+ * Primary CTA. Keeps the original contract (smooth-scrolls to #contactus and
+ * marks that page active) but adds a nectar-fill hover and a keyboard focus ring.
+ */
+const ActionButton = ({ children, setSelectedPage, variant = "solid" }: Props) => {
+  const base =
+    "group relative inline-flex items-center justify-center overflow-hidden rounded-full px-8 py-3 text-sm font-semibold tracking-wide transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nectar-400 focus-visible:ring-offset-2 focus-visible:ring-offset-cream";
+
+  const skin =
+    variant === "solid"
+      ? "bg-nectar-600 text-cream shadow-nectar hover:text-cream"
+      : "border border-botanical-700/30 bg-transparent text-botanical-800 hover:text-cream";
+
   return (
     <AnchorLink
-      className="rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white"
+      className={`${base} ${skin}`}
       onClick={() => setSelectedPage(SelectedPage.ContactUs)}
       href="#contactus"
-      > 
-        {children}
+    >
+      {/* Nectar fill that rises on hover */}
+      <span
+        aria-hidden="true"
+        className="absolute inset-0 origin-bottom scale-y-0 bg-botanical-700 transition-transform duration-300 ease-out group-hover:scale-y-100"
+      />
+      <span className="relative z-10">{children}</span>
     </AnchorLink>
-  )
-}
+  );
+};
 
-export default ActionButton
+export default ActionButton;

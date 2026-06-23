@@ -1,15 +1,47 @@
 {
     "homePage": {
+    "Eyebrow":"Artisan Hummingbird Feeders",
+    "HeadlinePre":"Bring the dance of",
+    "HeadlineHighlight":"hummingbirds",
+    "HeadlinePost":"home.",
+    "Lead":"Handcrafted from durable, eco-friendly glass and built to clean in seconds — Nectar Haven feeders are designed to attract, nourish, and keep these mesmerizing little birds coming back to your garden.",
+    "Stat1Value":"50+",
+    "Stat1Label":"wing-beats a second",
+    "Stat2Value":"100%",
+    "Stat2Label":"eco-friendly glass",
+    "Stat3Value":"4.9★",
+    "Stat3Label":"from happy gardeners",
     "GeneralDescription":"Welcome to Nectar Haven©, your ultimate destination for high-quality hummingbird feeders! Our carefully crafted feeders are designed to attract and nourish these mesmerizing birds, turning your garden into a vibrant oasis of natural beauty. Made from durable, eco-friendly materials, our feeders are easy to clean and refill, ensuring a hassle-free experience for you and a safe, delightful feeding environment for the hummingbirds. Whether you're a seasoned bird watcher or just starting your journey, Nectar Haven offers a variety of designs to suit your taste and meet the unique needs of these incredible creatures. Brighten your outdoor space and enjoy the enchanting dance of hummingbirds with our premium feeders!"
     },
     "productsPage": {
         "Header": "Our Products",
-        "description" : "Our Hummingbirds feeders product line is designed to bring the enchanting presence of hummingbirds right to your doorstep. Crafted with precision and elegance, each feeder combines functionality with aesthetic appeal, ensuring that these delicate creatures are both nourished and safe. The collection features a variety of designs, from classic glass feeders adorned with intricate floral patterns to modern, eco-friendly models made from recycled materials. Each feeder is equipped with easy-to-clean reservoirs and perches that offer comfort to the tiny visitors. Additionally, several models incorporate ant moats and bee guards to prevent unwanted guests from intruding. Whether you’re a seasoned bird-watcher or a nature enthusiast, our hummingbird feeders promise to enhance your outdoor experience, creating a vibrant, dynamic environment in your garden or balcony."
+        "Eyebrow": "The Collection",
+        "description" : "Our Hummingbirds feeders product line is designed to bring the enchanting presence of hummingbirds right to your doorstep. Crafted with precision and elegance, each feeder combines functionality with aesthetic appeal, ensuring that these delicate creatures are both nourished and safe. The collection features a variety of designs, from classic glass feeders adorned with intricate floral patterns to modern, eco-friendly models made from recycled materials. Each feeder is equipped with easy-to-clean reservoirs and perches that offer comfort to the tiny visitors. Additionally, several models incorporate ant moats and bee guards to prevent unwanted guests from intruding. Whether you’re a seasoned bird-watcher or a nature enthusiast, our hummingbird feeders promise to enhance your outdoor experience, creating a vibrant, dynamic environment in your garden or balcony.",
+        "items": [
+            { "name": "The Ruby Throat", "tag": "Hand-blown glass", "description": "Hand-blown ruby glass with a copper perch ring and a wide-mouth reservoir that twists apart for effortless cleaning." },
+            { "name": "Emerald Trumpet", "tag": "Recycled glass", "description": "Recycled-glass blossoms in deep emerald, with a built-in ant moat that keeps every drop of nectar pure all season." },
+            { "name": "Golden Nectar", "tag": "Bee-guarded", "description": "An amber glass globe with four bee-guarded ports and a leak-proof seal for slow, steady, mess-free feeding." },
+            { "name": "Crystal Bloom", "tag": "Etched crystal", "description": "A crystal-clear vessel etched with trumpet flowers, perched on a powder-coated steel hook for year-round display." },
+            { "name": "Frost Haven", "tag": "Cold-weather", "description": "Thick double-walled glass that resists freezing, so your hummingbirds stay fed through the coldest mornings." },
+            { "name": "Meadow Perch", "tag": "High-traffic", "description": "A low, wide basin with a comfortable wrap-around perch — built for busy gardens and frequent little visitors." }
+        ]
     },
     "contactUsPage": {
+        "NameLabel": "Your name",
+        "NamePlaceholder": "Jane Hummingbird",
+        "EmailLabel": "Email address",
+        "EmailPlaceholder": "jane@example.com",
+        "MessageLabel": "Your message",
+        "MessagePlaceholder": "Tell us which feeder caught your eye…",
+        "Submit": "Send message",
+        "Sending": "Sending…"
     },
     "buyNowPage": {
         "buyNow":"BUY NOW",
+        "Eyebrow":"Bring them home",
+        "HeadlinePre":"Start your",
+        "HeadlineHighlight":"hummingbird",
+        "HeadlinePost":"haven today.",
         "description":"Join our community of satisfied customers who have transformed their gardens into hummingbird havens. Our feeders are designed to attract and nourish these beautiful birds, providing you with endless joy and wonder. They are not just functional; they are also a beautiful addition to your garden. With various designs and colors, they can complement your outdoor decor while serving as a vital resource for these amazing birds."
     },
     "benefitsPage": {

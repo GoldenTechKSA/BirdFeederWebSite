@@ -4,35 +4,40 @@ import Footer from "@/scenes/footer";
 import Home from "@/scenes/home";
 import Navbar from "@/scenes/navbar";
 import OurProducts from "@/scenes/ourProducts";
+import Hummingbird from "@/shared/Hummingbird";
+import ScrollProgressBar from "@/shared/ScrollProgressBar";
 import { SelectedPage } from "@/shared/types";
 import { useEffect, useState } from "react";
 
-
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
-  const [ isTopOfPage, setIsTopofPage ] = useState<boolean>(true);
+  const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY === 0){
-        setIsTopofPage(true);
+      if (window.scrollY === 0) {
+        setIsTopOfPage(true);
         setSelectedPage(SelectedPage.Home);
       }
-      if (window.scrollY !== 0) setIsTopofPage(false);
-    }
+      if (window.scrollY !== 0) setIsTopOfPage(false);
+    };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("Scroll", handleScroll);
-  }, [])
-  return ( <div className="app bg-gray-20">
-      <Navbar 
-      isTopOfPage={isTopOfPage}
-      selectedPage ={selectedPage}
-      setSelectedPage={setSelectedPage}
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div className="app relative overflow-x-clip bg-cream">
+      <ScrollProgressBar />
+      <Hummingbird />
+      <Navbar
+        isTopOfPage={isTopOfPage}
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
       />
       <Home setSelectedPage={setSelectedPage} />
       <Benefits setSelectedPage={setSelectedPage} />
       <OurProducts setSelectedPage={setSelectedPage} />
-      <ContactUs setSelectedPage={setSelectedPage}/>
+      <ContactUs setSelectedPage={setSelectedPage} />
       <Footer />
     </div>
   );

@@ -1,42 +1,41 @@
+import { REVEAL_TRANSITION, scaleIn, useReducedMotionVariants } from "@/shared/motion";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-
-const childVariant = {
-    hidden: { opacity: 0, scale: 0.9},
-    visible: { opacity: 1, scale: 1 },
-};
-
 type Props = {
-    icon: JSX.Element;
-    title: string;
-    description: string;
-    setSelectedPage: (value: SelectedPage) => void;
+  icon: JSX.Element;
+  title: string;
+  description: string;
+  setSelectedPage: (value: SelectedPage) => void;
 };
 
 const Benefit = ({ icon, title, description, setSelectedPage }: Props) => {
-  return (
-    <motion.div 
-        variants={childVariant}
-        className="mt-5 rounded-md border-2 border-gray-100 px-5 py-16 text-center">
-        <div className="mb-4 flex justify-center">
-          <div className="rounded-full border-2 border-gray-100 g-primary-100 p-4">
-            {icon}
-          </div>
-        </div>
+  const variants = useReducedMotionVariants(scaleIn);
 
-        <h4 className="font-bold">{title}</h4>
-        <p className="my-3">{description}</p>
-        <AnchorLink
-          className = "text-sm font-bold text-primary-500 underline hover:text-secondary-500"
-          onClick={() => setSelectedPage(SelectedPage.ContactUs)}
-          href={`#${SelectedPage.ContactUs}`}
-            >
-                <p>Learn More</p>
-          </AnchorLink>
+  return (
+    <motion.div
+      variants={variants}
+      transition={REVEAL_TRANSITION}
+      className="group relative flex flex-col rounded-organic border border-botanical-700/10 bg-cream p-8 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
+    >
+      <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-botanical-50 text-botanical-700 ring-1 ring-botanical-700/10 transition-colors duration-300 group-hover:bg-botanical-700 group-hover:text-cream">
+        {icon}
+      </div>
+      <h3 className="font-serif text-xl font-bold text-ink">{title}</h3>
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/65">{description}</p>
+      <AnchorLink
+        className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-botanical-700"
+        onClick={() => setSelectedPage(SelectedPage.ContactUs)}
+        href={`#${SelectedPage.ContactUs}`}
+      >
+        Learn more
+        <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
+          →
+        </span>
+      </AnchorLink>
     </motion.div>
-  )
+  );
 };
 
-export default Benefit
+export default Benefit;

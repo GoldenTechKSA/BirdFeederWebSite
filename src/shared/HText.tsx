@@ -1,15 +1,19 @@
-import React from "react";
+import type { ReactNode } from "react";
 
 type Props = {
-    children: React.ReactNode;
+  children: ReactNode;
+  className?: string;
 };
 
-const HText = ({ children }: Props) => {
+/** Display heading in the brand serif. Sizing/layout is left to the caller. */
+const HText = ({ children, className = "" }: Props) => {
   return (
-    <h1 className="basis-3/5 font-montserrat text-3xl font-bold">
+    <h2
+      className={`font-serif text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl ${className}`}
+    >
       {children}
-    </h1>
-);
+    </h2>
+  );
 };
 
 export default HText;

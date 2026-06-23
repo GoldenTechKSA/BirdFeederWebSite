@@ -14,6 +14,7 @@ export enum SelectedPage {
 
   export interface ClassType {
     name: string;
+    tag?: string;
     description?: string;
     image: string;
   }

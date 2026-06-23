@@ -1,86 +1,88 @@
-import image1 from "@/assets/image1.png"
-import image2 from "@/assets/image2.png"
-import image3 from "@/assets/image3.png"
-import image4 from "@/assets/image4.png"
-import image5 from "@/assets/image5.png"
-import image6 from "@/assets/image6.png"
-import Strings from "@/assets/strings.json"
-import HText from '@/shared/HText'
-import { ClassType, SelectedPage } from '@/shared/types'
-import { motion } from 'framer-motion'
-import Product from "./Product"
+import feeder1 from "@/assets/products/feeder-01.webp";
+import feeder2 from "@/assets/products/feeder-02.webp";
+import feeder3 from "@/assets/products/feeder-03.webp";
+import feeder4 from "@/assets/products/feeder-04.webp";
+import feeder5 from "@/assets/products/feeder-05.webp";
+import feeder6 from "@/assets/products/feeder-06.webp";
+import Strings from "@/assets/strings.json";
+import GradientText from "@/shared/GradientText";
+import { staggerContainer, useReducedMotionVariants } from "@/shared/motion";
+import Reveal from "@/shared/Reveal";
+import SectionDivider from "@/shared/SectionDivider";
+import { ClassType, SelectedPage } from "@/shared/types";
+import { motion } from "framer-motion";
+import Product from "./Product";
 
-const products: Array<ClassType> = [
-    {
-        name: "BIRD FEEDER 1",
-        description: "BIRD FEEDER 1 DESCRIPTION",
-        image: image1
-    },
-    {
-        name: "BIRD FEEDER 2",
-        image: image2
-    },
-    {
-        name: "BIRD FEEDER 3",
-        description: "BIRD FEEDER 3 DESCRIPTION",
-        image: image3
-    },
-    {
-        name: "BIRD FEEDER 4",
-        description: "BIRD FEEDER 4 DESCRIPTION",
-        image: image4
-    },
-    {
-        name: "BIRD FEEDER 5",
-        image: image5
-    },
-    {
-        name: "BIRD FEEDER 6",
-        description: "BIRD FEEDER 6 DESCRIPTION",
-        image: image6
-    },
-]
+const images = [feeder1, feeder2, feeder3, feeder4, feeder5, feeder6];
+
+const products: Array<ClassType> = Strings.productsPage.items.map((item, i) => ({
+  name: item.name,
+  tag: item.tag,
+  description: item.description,
+  image: images[i],
+}));
 
 type Props = {
-    setSelectedPage: (value: SelectedPage) => void;
+  setSelectedPage: (value: SelectedPage) => void;
 };
 
 const OurProducts = ({ setSelectedPage }: Props) => {
+  const gridVariants = useReducedMotionVariants(staggerContainer(0.08));
+
   return (
-    <section id="ourproducts" className="w-full bg-primary-100 py-40">
-      <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.OurProducts)}
+    <section id="ourproducts" className="relative overflow-hidden bg-botanical-950 text-cream">
+      {/* ambient glows */}
+      <div
+        aria-hidden="true"
+        className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-iris-emerald/20 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute -right-40 bottom-32 h-96 w-96 rounded-full bg-iris-ruby/15 blur-3xl"
+      />
+
+      <motion.div
+        className="relative mx-auto w-5/6 py-24 md:py-28"
+        onViewportEnter={() => setSelectedPage(SelectedPage.OurProducts)}
+      >
+        {/* HEADER */}
+        <Reveal className="max-w-2xl">
+          <p className="mb-4 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-botanical-200">
+            <span className="h-px w-8 bg-botanical-200" />
+            {Strings.productsPage.Eyebrow}
+          </p>
+          <h2 className="font-serif text-4xl font-bold leading-[1.05] tracking-tight text-cream md:text-5xl">
+            Feeders made for the <GradientText>garden</GradientText>.
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-cream/70">
+            {Strings.productsPage.description}
+          </p>
+        </Reveal>
+
+        {/* PRODUCT GRID */}
+        <motion.div
+          className="mt-14 grid gap-8 sm:grid-cols-2 md:grid-cols-3"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={gridVariants}
         >
-          <motion.div
-            className="mx-auto w-5/6"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5}}
-            transition={{ duration: 0.5}}
-            variants={{ 
-              hidden: { opacity: 0, x:-50} , 
-              visible: { opacity: 1, x: 0},
-            }}
-            >
-            <div className="md:w-3/5">
-                <HText>{Strings.productsPage.Header}</HText>
-                <p className="py-5">{Strings.productsPage.description}</p>
-            </div>
-          </motion.div>
-          <div className="mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden">
-            <ul className="w-[2800px] whitespace-nowrap">
-              {products.map((item, index) => (
-                <Product 
-                  key={`${item.name}-${index}`}
-                  name={item.name}
-                  description={item.description}
-                  image={item.image}
-                />
-              ))}
-            </ul>
-          </div>
+          {products.map((item) => (
+            <Product
+              key={item.name}
+              name={item.name}
+              tag={item.tag}
+              description={item.description}
+              image={item.image}
+            />
+          ))}
         </motion.div>
+      </motion.div>
+
+      {/* transition back into the light contact chapter */}
+      <SectionDivider className="text-cream" />
     </section>
-  )
+  );
 };
 
 export default OurProducts;

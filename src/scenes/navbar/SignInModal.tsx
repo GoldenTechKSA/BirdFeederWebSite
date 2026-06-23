@@ -16,7 +16,8 @@ type Props = {
 };
 
 const SignInModal = ({ isOpen, onClose, onSignIn }: Props) => {
-  const inputStyles = "w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white";
+  const inputStyles =
+    "w-full rounded-2xl border border-botanical-700/15 bg-white px-5 py-3 text-ink placeholder-ink/35 transition focus:border-botanical-600 focus:outline-none focus:ring-2 focus:ring-botanical-600/30";
   const {
     register,
     handleSubmit,
@@ -47,14 +48,14 @@ const SignInModal = ({ isOpen, onClose, onSignIn }: Props) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-botanical-950/50 px-4 backdrop-blur-sm"
           onClick={onClose}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
           <motion.div
-            className="w-full max-w-md rounded-2xl bg-gray-20 p-8 drop-shadow-xl"
+            className="w-full max-w-md rounded-organic bg-cream p-8 shadow-lift"
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, y: 40, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -63,20 +64,21 @@ const SignInModal = ({ isOpen, onClose, onSignIn }: Props) => {
           >
             {/* HEADER */}
             <div className="mb-2 flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-primary-500">
+              <h2 className="font-serif text-3xl font-bold text-botanical-700">
                 {Strings.signInPage.Title}
               </h2>
               <button type="button" aria-label="Close sign in" onClick={onClose}>
-                <XMarkIcon className="h-6 w-6 text-gray-500 transition hover:text-primary-500" />
+                <XMarkIcon className="h-6 w-6 text-ink/50 transition hover:text-botanical-700" />
               </button>
             </div>
-            <p className="mb-6 text-sm text-gray-500">{Strings.signInPage.Subtitle}</p>
+            <p className="mb-6 text-sm text-ink/60">{Strings.signInPage.Subtitle}</p>
 
             {/* FORM */}
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 className={inputStyles}
                 type="email"
+                autoComplete="email"
                 placeholder={Strings.signInPage.EmailPlaceholder}
                 {...register("email", {
                   required: true,
@@ -84,7 +86,7 @@ const SignInModal = ({ isOpen, onClose, onSignIn }: Props) => {
                 })}
               />
               {errors.email && (
-                <p className="mt-1 text-primary-500">
+                <p className="mt-1 text-sm text-iris-ruby">
                   {errors.email.type === "required" && "This field is required."}
                   {errors.email.type === "pattern" && "Invalid email address."}
                 </p>
@@ -93,6 +95,7 @@ const SignInModal = ({ isOpen, onClose, onSignIn }: Props) => {
               <input
                 className={`${inputStyles} mt-4`}
                 type="password"
+                autoComplete="current-password"
                 placeholder={Strings.signInPage.PasswordPlaceholder}
                 {...register("password", {
                   required: true,
@@ -100,7 +103,7 @@ const SignInModal = ({ isOpen, onClose, onSignIn }: Props) => {
                 })}
               />
               {errors.password && (
-                <p className="mt-1 text-primary-500">
+                <p className="mt-1 text-sm text-iris-ruby">
                   {errors.password.type === "required" && "This field is required."}
                   {errors.password.type === "minLength" &&
                     "Password must be at least 6 characters."}
@@ -110,7 +113,7 @@ const SignInModal = ({ isOpen, onClose, onSignIn }: Props) => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="mt-6 w-full rounded-lg bg-secondary-500 px-10 py-3 transition duration-500 hover:bg-primary-500 hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+                className="mt-6 w-full rounded-full bg-nectar-600 px-10 py-3 font-semibold text-cream shadow-nectar transition-colors duration-300 hover:bg-botanical-700 disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {isSubmitting ? Strings.signInPage.SigningIn : Strings.signInPage.SignIn}
               </button>
