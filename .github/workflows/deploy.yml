@@ -1,0 +1,53 @@
+name: Deploy to VPS
+
+# Fires when a PR is merged into main (a merge is a push to main).
+on:
+  push:
+    branches: [main]
+
+# If two merges land close together, cancel the older in-flight deploy
+# so only the latest commit reaches the server.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Project treats lint warnings as errors (--max-warnings 0);
+      # keep that gate in CI so a bad merge fails loudly instead of shipping.
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Add VPS host key to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H "${{ secrets.VPS_HOST }}" >> ~/.ssh/known_hosts
+
+      # rsync the built static files to the Apache document root.
+      # --delete keeps the server folder an exact mirror of dist/
+      # (removes stale hashed assets). It only ever touches the
+      # remote_path below, so other VirtualHosts are untouched.
+      - name: Deploy via rsync
+        uses: burnett01/rsync-deployments@7.0.2
+        with:
+          switches: -avzr --delete
+          path: dist/
+          remote_path: /var/www/nectarhaven/
+          remote_host: ${{ secrets.VPS_HOST }}
+          remote_user: ${{ secrets.VPS_USER }}
+          remote_key: ${{ secrets.VPS_SSH_KEY }}
