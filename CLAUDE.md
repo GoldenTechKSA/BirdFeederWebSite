@@ -19,7 +19,7 @@ There is no test runner configured. Always run `npm run lint` and `npm run build
 
 ## Deployment
 
-Every push to `main` (i.e. every merged PR) deploys to production. `.github/workflows/deploy.yml` runs `npm ci` → `npm run lint` → `npm run build`, then rsyncs `dist/` with `--delete` to `/var/www/nectarhaven/` on the Hostinger VPS, where Apache2 serves it over HTTPS (Let's Encrypt). A lint or type error fails the deploy.
+Every push to `main` (i.e. every merged PR) deploys to production. `.github/workflows/deploy.yml` runs `npm ci` → `npm run lint` → `npm run build`, then rsyncs `dist/` with `--delete` to `/var/www/nectarhavenfeeders.com/` on the Hostinger VPS, where Apache2 serves it over HTTPS (Let's Encrypt). A lint or type error fails the deploy.
 
 - `deploy/README.md` — first-time setup (deploy keypair, DNS, certbot, the `VPS_HOST` / `VPS_USER` / `VPS_SSH_KEY` GitHub secrets).
 - `deploy/vps-setup.sh` — one-time VPS provisioning (creates the per-site `nectarhaven` user and document root).

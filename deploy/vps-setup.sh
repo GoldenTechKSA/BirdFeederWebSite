@@ -18,7 +18,7 @@ set -euo pipefail
 
 # ---- CONFIG (adjust to match your other sites) -----------------------
 SITE_USER="nectarhaven"
-DOC_ROOT="/var/www/nectarhaven"
+DOC_ROOT="/var/www/nectarhavenfeeders.com"
 DOMAIN="nectarhavenfeeders.com"
 WWW_DOMAIN="www.nectarhavenfeeders.com"
 VHOST_CONF="nectarhaven.conf"          # expected next to this script

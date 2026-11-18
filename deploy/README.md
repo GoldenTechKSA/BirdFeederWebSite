@@ -8,7 +8,7 @@ VPS document root; Apache serves it over HTTPS (Let's Encrypt).
 PR merged to main
    └─> GitHub Actions (.github/workflows/deploy.yml)
          npm ci → npm run lint → npm run build → dist/
-              └─> rsync over SSH ──> VPS:/var/www/nectarhaven/
+              └─> rsync over SSH ──> VPS:/var/www/nectarhavenfeeders.com/
                                         └─> Apache VirtualHost + Let's Encrypt SSL
 ```
 
@@ -69,7 +69,7 @@ Test the pipeline manually before relying on CI:
 
 ```bash
 npm run build
-rsync -avz ./dist/ nectarhaven@<VPS_IP>:/var/www/nectarhaven/
+rsync -avz ./dist/ nectarhaven@<VPS_IP>:/var/www/nectarhavenfeeders.com/
 ```
 
 Then merge a trivial PR to `main` and watch the **Actions** tab. Confirm the site
