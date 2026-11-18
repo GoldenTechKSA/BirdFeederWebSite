@@ -47,7 +47,7 @@ jobs:
         with:
           switches: -avzr --delete
           path: dist/
-          remote_path: /var/www/nectarhaven/
+          remote_path: /var/www/nectarhavenfeeders.com/
           remote_host: ${{ secrets.VPS_HOST }}
           remote_user: ${{ secrets.VPS_USER }}
           remote_key: ${{ secrets.VPS_SSH_KEY }}
